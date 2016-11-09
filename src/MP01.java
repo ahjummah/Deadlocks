@@ -38,7 +38,27 @@ public class MP01 {
         }
         System.out.println("Available resources: ");
         int avail = scan.nextInt();
+        boolean[] flag = new boolean[numproc];
+        Arrays.fill(flag, Boolean.FALSE);
+        String safe = "";
 
+        while (Arrays.toString(flag).contains("f")) {
+            for (int i = 0; i < numproc; i++) {
+                if (flag[i] == false) {
+                    System.out.printf("P[%d]:", i + 1);
+                    if (time[i] <= avail) {
+                        avail += time[i];
+                        System.out.println("Safe");
+                        safe += "-P[" + (i + 1) + "]-";
+                        flag[i] = true;
+                    } else {
+                        System.out.println("Deadlock Occurred");
+                    }
+                }
+            }
+        }
+        System.out.println("Safe sequence: " + safe);
+        System.out.println("Final Work: "+avail);
     }
 
     private static void deadlock_avoidance() {
@@ -115,7 +135,7 @@ public class MP01 {
                 }
             }
         }
-        System.out.println(safe);
+        System.out.println("Safe Sequence: "+ safe);
         System.out.println("Final Work Matrix");
         matrixavail.print(5, 2);
 
