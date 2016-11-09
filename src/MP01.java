@@ -16,12 +16,8 @@ public class MP01 {
         Scanner scan = new Scanner(System.in);
         int choice = scan.nextInt();
         if (choice == 1) {
-            System.out.println("Deadlock Prevention");
-
             deadlock_prevention();
         } else if (choice == 2) {
-            System.out.println("Deadlock Avoidance");
-
             deadlock_avoidance();
         }
 
