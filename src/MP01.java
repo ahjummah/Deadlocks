@@ -114,11 +114,8 @@ public class MP01 {
                         } else {
 
                             System.out.printf("Deadlock Occurred\n", i + 1);
-
                         }
-
                     }
-
                 }
             }
         }
