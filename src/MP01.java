@@ -20,6 +20,8 @@ public class MP01 {
         } else if (choice == 2) {
             deadlock_avoidance();
         }
+        System.out.println("\nEnter any key to exit.");
+        scan.next();
 
     }
 
@@ -59,6 +61,7 @@ public class MP01 {
         }
         System.out.println("Safe sequence: " + safe);
         System.out.println("Final Work: "+avail);
+       
     }
 
     private static void deadlock_avoidance() {
